@@ -1,0 +1,30 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="heart"
+run/main_scene="uid://dha70sr7t7w26"
+config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0.1343861, 0.09943597, 0.19263639, 1)
+boot_splash/show_image=false
+boot_splash/use_filter=false
+boot_splash/image="uid://b2vlbk5e8bi6u"
+config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/scale=3.0
+window/stretch/scale_mode="integer"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
