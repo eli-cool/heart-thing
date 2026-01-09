@@ -69,5 +69,14 @@ value = 100.0
 rounded = true
 show_percentage = false
 
+[node name="attack3" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(248, 109)
+
 [node name="attack" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(328, 105)
+position = Vector2(199, 107)
+
+[node name="attack2" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(225, 106)
+
+[node name="attack4" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(269, 111)

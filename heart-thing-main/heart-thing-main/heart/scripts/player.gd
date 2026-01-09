@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var healthbar = $"../healthbar"
 @onready var healthbar_2: ProgressBar = $"../healthbar2"
 @onready var kr_time: Timer = $"../kr_time"
+@export var is_kr = false
+@export var kr_dif = 0
 
 	
 func ready():
@@ -22,6 +24,19 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 	
+	kr_dif = hp - hp_potential
+	if kr_dif >= 20:
+		kr_time.wait_time = 0.05
+	elif kr_dif >= 15:
+		kr_time.wait_time = 0.1
+	elif kr_dif >= 10:
+		kr_time.wait_time = 0.5
+	elif kr_dif >= 5:
+		kr_time.wait_time = 1
+	else:
+		kr_time.wait_time = 1
+	print(kr_time.wait_time)
+	
 	#hurting
 	if is_hurting:
 		print(hp)
@@ -29,16 +44,16 @@ func _physics_process(_delta):
 		healthbar_2.value = hp
 		hp_potential -= 2
 		hp -= 1
-
+#kr
 	if hp > hp_potential:
-		hp -= 0
+		is_kr = true
 	else:
-		print("no kr")
+		is_kr = false
 		
 	if hp <= 0:
 		queue_free()
-	#kr
-		
+	
+	
 		
 func _on_area_2d_area_entered(area: Area2D) -> void:
 #	print(area.get_parent())
@@ -54,6 +69,8 @@ func _on_area_2d_area_exited(area):
 		print("no more ouch")
 
 
-#func _on_kr_time_timeout() -> void:
-	
+func _on_kr_time_timeout() -> void:
+	if is_kr:
+		healthbar_2.value = hp
+		hp -= 1
 	
