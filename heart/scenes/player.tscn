@@ -25,5 +25,9 @@ shape = SubResource("RectangleShape2D_g2els")
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_qhqgy")
 
+[node name="kr_time" type="Timer" parent="."]
+autostart = true
+
 [connection signal="area_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="kr_time" to="CharacterBody2D" method="_on_kr_time_timeout"]
