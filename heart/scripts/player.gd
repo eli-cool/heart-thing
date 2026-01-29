@@ -40,7 +40,7 @@ func _physics_process(_delta):
 	if is_hurting:
 		healthbar.value = hp_potential
 		healthbar_2.value = hp
-		hp_potential -= 2
+		hp_potential -= 1
 		
 		if kr_dif > 10:
 			hp -= 1

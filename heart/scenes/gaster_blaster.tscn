@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://disc8ufxbvdo0"]
+
+[ext_resource type="Texture2D" uid="uid://b4t0h08rb70yp" path="res://76017.png" id="1_rhl0s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecp53"]
+atlas = ExtResource("1_rhl0s")
+region = Rect2(5, 861, 43, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbkut"]
+atlas = ExtResource("1_rhl0s")
+region = Rect2(53, 861, 43, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88s6i"]
+atlas = ExtResource("1_rhl0s")
+region = Rect2(101, 861, 43, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b7wq"]
+atlas = ExtResource("1_rhl0s")
+region = Rect2(149, 861, 43, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouomm"]
+atlas = ExtResource("1_rhl0s")
+region = Rect2(197, 861, 43, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hybgi"]
+atlas = ExtResource("1_rhl0s")
+region = Rect2(245, 861, 43, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_776x8"]
+atlas = ExtResource("1_rhl0s")
+region = Rect2(5, 861, 43, 57)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpop7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecp53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbkut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88s6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b7wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouomm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hybgi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_776x8")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5miv"]
+
+[node name="Gaster Blaster" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fpop7")
+animation = &"new_animation"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.39, 1.39)
+shape = SubResource("RectangleShape2D_b5miv")

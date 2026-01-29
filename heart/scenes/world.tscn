@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dha70sr7t7w26"]
+[gd_scene load_steps=14 format=3 uid="uid://dha70sr7t7w26"]
 
 [ext_resource type="PackedScene" uid="uid://cygueff5s1iex" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://cld3si6fdwway" path="res://scenes/sans.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://duhm6ixmddrcg" path="res://scenes/attack.tscn" id="3_4wyf3"]
+[ext_resource type="FontFile" uid="uid://c7ol27r5taf37" path="res://COMIC.TTF" id="4_k0juu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wyf3"]
 bg_color = Color(0.8352941, 0, 0, 1)
@@ -21,6 +22,15 @@ bg_color = Color(0.6784314, 0.5058824, 0.8666667, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0juu"]
 bg_color = Color(1, 0.8833333, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_4wyf3"]
+base_font = ExtResource("4_k0juu")
+
+[sub_resource type="FontVariation" id="FontVariation_71j4m"]
+base_font = ExtResource("4_k0juu")
+
+[sub_resource type="FontVariation" id="FontVariation_qfnet"]
+base_font = ExtResource("4_k0juu")
 
 [node name="world" type="Node2D"]
 
@@ -70,13 +80,40 @@ rounded = true
 show_percentage = false
 
 [node name="attack3" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(248, 109)
+position = Vector2(222, 101)
 
 [node name="attack" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(199, 107)
+position = Vector2(187, 100)
 
 [node name="attack2" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(225, 106)
+position = Vector2(205, 98)
 
 [node name="attack4" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(269, 111)
+position = Vector2(241, 101)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 34.0
+offset_top = 38.0
+offset_right = 74.0
+offset_bottom = 78.0
+theme_override_fonts/normal_font = SubResource("FontVariation_4wyf3")
+text = "hiii"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 167.0
+offset_top = 17.0
+offset_right = 275.0
+offset_bottom = 47.0
+theme_override_fonts/normal_font = SubResource("FontVariation_71j4m")
+text = "working kr !!!"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 68.0
+offset_top = 171.0
+offset_right = 231.495
+offset_bottom = 263.0
+theme_override_fonts/normal_font = SubResource("FontVariation_qfnet")
+theme_override_font_sizes/normal_font_size = 9
+text = "custom tween animation (tween is moving the sprite back and forth)"
+fit_content = true
+scroll_active = false
