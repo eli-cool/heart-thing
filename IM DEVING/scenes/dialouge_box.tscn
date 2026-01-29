@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch51o4th1n8gw"]
+
+[ext_resource type="Script" uid="uid://diahfy0yggqbu" path="res://scripts/dialouge_box.gd" id="1_3okig"]
+[ext_resource type="Texture2D" uid="uid://cnjkfxr20o8p4" path="res://sprites/dog-haircut.png" id="2_3okig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eatkt"]
+size = Vector2(365, 199)
+
+[node name="dialouge box" type="Node2D"]
+scale = Vector2(1, 0.995508)
+script = ExtResource("1_3okig")
+
+[node name="Area2D" type="Area2D" parent="."]
+priority = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_eatkt")
+
+[node name="Dog-haircut" type="Sprite2D" parent="."]
+position = Vector2(0, 67.3023)
+scale = Vector2(1.84848, 1)
+texture = ExtResource("2_3okig")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -183.0
+offset_top = -31.6977
+offset_right = 14.0005
+offset_bottom = 88.3023
+text = "hi"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

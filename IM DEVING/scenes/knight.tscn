@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0u42ik1k4t63"]
+
+[ext_resource type="Texture2D" uid="uid://l7luc31gdqun" path="res://sprites/knight3.png" id="1_buqg6"]
+[ext_resource type="Script" uid="uid://btr4wvhiothyf" path="res://scripts/knight.gd" id="1_qxgmm"]
+[ext_resource type="Script" uid="uid://biqavolmr3vpa" path="res://scripts/knightmove2.gd" id="2_qxgmm"]
+
+[sub_resource type="Curve2D" id="Curve2D_fc4ff"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -2.915, 0, 0, 0, 3.765, 0, 2.615)
+}
+point_count = 2
+
+[node name="knight" type="Node2D"]
+z_index = 1
+script = ExtResource("1_qxgmm")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_fc4ff")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Path2D"]
+script = ExtResource("2_qxgmm")
+
+[node name="knight" type="Sprite2D" parent="Path2D/StaticBody2D"]
+position = Vector2(0, -5.92)
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("1_buqg6")
+
+[node name="trail time" type="Timer" parent="Path2D/StaticBody2D"]
+wait_time = 0.125
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Path2D/StaticBody2D"]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Path2D/StaticBody2D/trail time" to="." method="_on_timer_timeout"]

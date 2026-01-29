@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7xs40hs8ppdp"]
+
+[ext_resource type="Texture2D" uid="uid://l7luc31gdqun" path="res://sprites/knight3.png" id="1_8lcxp"]
+[ext_resource type="Script" uid="uid://bfeot4ln6ah3x" path="res://scripts/knightafimage.gd" id="2_xbwhh"]
+
+[node name="knight2" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.5921569)
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("1_8lcxp")
+script = ExtResource("2_xbwhh")
