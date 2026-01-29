@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://preed2l8sn71"]
+
+[ext_resource type="PackedScene" uid="uid://0swk1wj4ggpk" path="res://scenes/plr.tscn" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://1cb57vijp65" path="res://scenes/enemy.tscn" id="2_4wyf3"]
+[ext_resource type="Script" uid="uid://b5udkjs8fbb0j" path="res://enemy.gd" id="2_k0juu"]
+
+[node name="world" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_rwgxs")]
+position = Vector2(246, 146)
+script = ExtResource("2_k0juu")
+run_speed = 10
+
+[node name="enemy" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(146, 110)

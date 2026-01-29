@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4hm545h1sku5"]
+
+[ext_resource type="Script" uid="uid://segjdqr0qyo0" path="res://can_be_killed.gd" id="1_1jdo3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jdo3"]
+size = Vector2(55.75, 52)
+
+[node name="can_be_killed" type="Node2D"]
+script = ExtResource("1_1jdo3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_1jdo3")
